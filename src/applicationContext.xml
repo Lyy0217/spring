@@ -14,8 +14,36 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean name="category" class="com.how2java.pojo.Category">
-        <property name="name" value="liuyangyang09"/>
-    </bean>
+    <!--    基于注解-->
+    <context:component-scan base-package="com.how2java.aspect"/>
+    <context:component-scan base-package="com.how2java.service"/>
+    <context:component-scan base-package="com.how2java.pojo"/>
+    <aop:aspectj-autoproxy/>
+
+    <!--    基于xml配置-->
+    <!--    <context:annotation-config/>-->
+    <!--    <bean name="category" class="com.how2java.pojo.Category">-->
+    <!--        <property name="name" value="fruit"/>-->
+    <!--    </bean>-->
+    <!--    <bean name="product" class="com.how2java.pojo.Product">-->
+    <!--        <property name="name" value="apple"/>-->
+    <!--        <property name="category" ref="category"/>-->
+    <!--    </bean>-->
+
+    <!--    <bean name="productService" class="com.how2java.service.ProductService"/>-->
+    <!--    <bean name="loggerAspect" class="com.how2java.aspect.LoggerAspect"/>-->
+    <!--    <bean name="performanceAspect" class="com.how2java.aspect.PerformanceAspect"/>-->
+
+    <!--    <aop:config>-->
+    <!--        <aop:pointcut id="cutpoint" expression="execution(* com.how2java.service.ProductService.*(..))"/>-->
+
+    <!--        <aop:aspect id="logAspect" ref="loggerAspect">-->
+    <!--            <aop:around pointcut-ref="cutpoint" method="log"/>-->
+    <!--        </aop:aspect>-->
+
+    <!--        <aop:aspect id="performAspect" ref="performanceAspect">-->
+    <!--            <aop:around pointcut-ref="cutpoint" method="performance"/>-->
+    <!--        </aop:aspect>-->
+    <!--    </aop:config>-->
 
 </beans>
